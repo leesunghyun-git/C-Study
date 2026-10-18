@@ -106,3 +106,36 @@ ushort u = 65;
 char c = (char)u;
 Console.WriteLine(c);
 
+int [] arr = new int[]{1,2,3,4,5};
+
+foreach (int elem in arr)
+{
+    Console.WriteLine(elem);
+}
+
+
+/* 
+    점프문
+
+    break,continue,goto,return,throw
+
+    goto => 사용하면 for/foreach/while/do 를 모두 대체 가능 But, 가독성이 현저히 떨어짐
+ */
+
+ int sum1 = 0;
+ int n = 0;
+
+LOOP:
+    n++;
+    if (n> 1000)
+    {
+    goto LOOPEXIT;
+    }
+
+    if ((n%2) != 0) goto LOOP;
+
+    sum1 += n;
+    goto LOOP;
+
+LOOPEXIT:
+    Console.WriteLine(sum1);
